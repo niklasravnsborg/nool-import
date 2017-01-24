@@ -34,24 +34,25 @@ foreach ($message_rows as $message_row) {
 
 	$columns = $message_row->find('td');
 
-	// $teacher     = $columns[2]->text;
 	// $replacement = $columns[3]->text;
 	// $room        = $columns[4]->text;
 	// $info        = $columns[6]->text;
 
 	if ($columns[5]->text == 'Entfall') {
-		$course = strtolower($columns[0]->text);
-		$lesson = (int) $columns[1]->text;
-		$type   = 'canceled';
+		$course  = strtolower($columns[0]->text);
+		$lesson  = (int) $columns[1]->text;
+		$teacher = $columns[2]->text;
+		$type    = 'canceled';
 	} else {
 		continue;
 	}
 
 	$messages[] = [
-		'course' => $course,
-		'lesson' => $lesson,
-		'date'   => $date,
-		'type'   => $type
+		'course'  => $course,
+		'lesson'  => $lesson,
+		'date'    => $date,
+		'teacher' => $teacher,
+		'type'    => $type
 	];
 }
 
