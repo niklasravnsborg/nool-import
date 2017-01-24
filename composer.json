@@ -1,0 +1,12 @@
+{
+    "name": "niklasravnsborg/parse",
+    "authors": [
+        {
+            "name": "Niklas Ravnsborg-Gjertsen",
+            "email": "niklasravnsborg@gmail.com"
+        }
+    ],
+    "require": {
+        "paquettg/php-html-parser": "^1.7"
+    }
+}
